@@ -8,7 +8,8 @@ library(caret)
 library(randomForest)
 library(pROC)
 
-install.packages('devtools')
+install.packages('terra')
+
 
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("talgalili/d3heatmap")
