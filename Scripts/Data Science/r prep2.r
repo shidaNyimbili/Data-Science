@@ -27,7 +27,7 @@ zam_packages <- c("tidyverse", "here", "gifski", "gstat","gt","gtsummary","gghig
                   "RColorBrewer", "data.table", "d3heatmap","pheatmap","hablar", "gganimate", "dygraphs", "gapminder", "hrbrthemes",
                   "geomtextpath", "patchwork", "gridExtra", "grid", "rmarkdown", "forecast", 
                   "backtest", "quantmod", "tseries", "writexl", "ggpubr", "rcartocolor", "remotes", "geodata",
-                  "shiny", "rgeoboundaries", "nasapower", "classInt","spData","tmap","tmaptools","spDataLarge",
+                  "shiny", "nasapower", "classInt","spData","tmap","tmaptools","spDataLarge",
                   "leaflet", "ggsflabel", "sf", "RSelenium", "netstat", "GGally", "calendR", "areaplot", "hexbin",
                   "webshot", "oceanis", "SPlit", "spdep","gsubfn", "proto","fpp", "mapview", "shinydashboard", "packrat",
                   "gt", "bigD","formattable", "reactablefmtr", "scales", "caret","predict3d", "ggpmisc", "cowplot", 

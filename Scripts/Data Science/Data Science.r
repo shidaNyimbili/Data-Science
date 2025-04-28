@@ -1,7 +1,15 @@
-source("Scripts/Analytics/r prep2.r")
+source("Scripts/Data Science/r prep2.r")
 
 # rm(list =ls())
 # graphics.off()
+
+library(terra)
+
+install.packages("terra")
+
+Sys.which("make")
+
+install.packages("terra", type = "binary")
 
 
 #inspect the data

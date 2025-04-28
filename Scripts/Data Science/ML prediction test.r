@@ -10,6 +10,10 @@ library(pROC)
 
 install.packages('terra')
 
+install.packages("terra")
+
+install.packages("geodata", dependencies = TRUE)
+
 
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("talgalili/d3heatmap")
