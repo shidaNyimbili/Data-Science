@@ -3,13 +3,13 @@ source("Scripts/Data Science/r prep2.r")
 # rm(list =ls())
 # graphics.off()
 
-library(terra)
-
-install.packages("terra")
-
-Sys.which("make")
-
-install.packages("terra", type = "binary")
+# library(terra)
+# 
+# install.packages("terra")
+# 
+# Sys.which("make")
+# 
+# install.packages("terra", type = "binary")
 
 
 #inspect the data
@@ -36,6 +36,8 @@ glimpse(df)
 df1 <- select(df, manufacturer, model, year)
 df1
 
+arrange(df, desc(year))
+
 colnames(df)
 
 #or
@@ -47,8 +49,6 @@ df3 <- df %>%
 
 df2 <- df %>%
   select(manufacturer, model, year)
-
-df4 <- contains(df, quattro)
 
 df2
 
@@ -114,13 +114,22 @@ df <- mutate(df,
 view(df)
 
 #Transmute
-#create the column and drops other columns off the i itial table
+#create the column and drops other columns off the initial table
 
 dfme <- transmute(df, paste(manufacturer, model, sep= " "))
 
 dfme
 
-transmute(df, car = paste(manufacturer, model, sep=" "))
+sh <- transmute(df, car = paste(manufacturer, model, sep=" "))
+sh
+
+ns <- transmute(df, manufacturer, model)
+
+ns
+
+ckn <- transmute(df, cars = paste(manufacturer, model, year, sep=""))
+
+ckn
 
 #Manulpulate cases - rows
 
