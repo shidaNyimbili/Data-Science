@@ -74,7 +74,7 @@ if (dbIsValid(con)) {
 # result <- dbGetQuery(con, "SELECT version();")
 # print(result)
 
-df <- read.xlsx("Data Science/fy24q4.xlsx")
+df <- read.xlsx("Data Science/Data/fy24q4.xlsx")
 
 
 #Pushing the data in df to PostgreSQL

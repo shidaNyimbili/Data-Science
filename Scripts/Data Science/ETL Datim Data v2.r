@@ -1,6 +1,6 @@
 source("Scripts/Data Science/r prep2.r")
 
-# Log file path
+## Log file path
 log_file <- "etl_process_log.txt"
 
 log_message <- function(message) {
