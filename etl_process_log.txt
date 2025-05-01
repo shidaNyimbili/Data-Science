@@ -1,3 +1,6 @@
 2025-05-01 14:52:40.754806 - ETL process started.
 2025-05-01 14:52:43.007657 - Attempting to connect to the PostgreSQL database.
 2025-05-01 14:52:48.983667 - Connected to the 'health_data' database.
+2025-05-01 15:18:10.114656 - ETL process started.
+2025-05-01 15:18:10.668639 - Attempting to connect to the PostgreSQL database.
+2025-05-01 15:18:16.243768 - Connected to the 'health_data' database.
