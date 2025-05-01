@@ -74,7 +74,7 @@ if (dbIsValid(con)) {
 # result <- dbGetQuery(con, "SELECT version();")
 # print(result)
 
-df <- read.xlsx("Data Science/Data/fy24q4.xlsx")
+df <- read.xlsx("Data/fy24q4.xlsx")
 
 
 #Pushing the data in df to PostgreSQL
@@ -116,7 +116,7 @@ write_xlsx(query_result, output_file_name)
 
 # Export full table to Excel
 query_result <- dbGetQuery(con, "SELECT * FROM fy24q4")
-output_file_name <- paste0("Data/processed_files/extracted_healthdata_", Sys.Date(), ".xlsx")
+output_file_name <- paste0("processed_files/extracted_healthdata_", Sys.Date(), ".xlsx")
 write_xlsx(query_result, output_file_name)
 log_message(paste("Exported full dataset to:", output_file_name))
 
