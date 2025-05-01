@@ -17,3 +17,10 @@
 2025-05-01 15:32:19.90039 - Closing the database connection.
 2025-05-01 15:32:20.054195 - Database connection closed.
 2025-05-01 15:32:20.087071 - ETL process completed.
+2025-05-01 15:34:32.588255 - ETL process started.
+2025-05-01 15:34:33.073683 - Attempting to connect to the PostgreSQL database.
+2025-05-01 15:34:37.689353 - Connected to the 'health_data' database.
+2025-05-01 15:42:43.121818 - Exported full dataset to: processed_files/extracted_healthdata_2025-05-01.xlsx
+2025-05-01 15:42:43.166237 - Closing the database connection.
+2025-05-01 15:42:43.5301 - Database connection closed.
+2025-05-01 15:42:44.205319 - ETL process completed.
