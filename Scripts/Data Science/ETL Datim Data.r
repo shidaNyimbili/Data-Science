@@ -1,4 +1,4 @@
-source("Scripts/Analytics/r prep2.r")
+source("Scripts/Data Science/r prep2.r")
 
 
 # Log file path
