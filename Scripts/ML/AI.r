@@ -1,9 +1,11 @@
 install.packages("caret")
 library(lm.beta)
-install.packages("lm")
+# install.packages("devtools")
+devtools::install_github("FedericoGarza/lineartestr")
 
-install.packages("predict3d")
 
+# 1install.packages("predict3d")
+colnam
 # Load the necessary libraries
 source("Scripts/dataPrep.r")
 
