@@ -13,3 +13,7 @@
 2025-05-01 15:26:34.876526 - Exported full dataset to: Data/processed_files/extracted_data_fy24q4_2025-05-01.xlsx
 2025-05-01 15:26:34.937314 - Database connection closed.
 2025-05-01 15:26:34.967506 - ETL process completed.
+2025-05-01 15:32:19.869965 - Exported full dataset to: Data/processed_files/extracted_healthdata_2025-05-01.xlsx
+2025-05-01 15:32:19.90039 - Closing the database connection.
+2025-05-01 15:32:20.054195 - Database connection closed.
+2025-05-01 15:32:20.087071 - ETL process completed.
