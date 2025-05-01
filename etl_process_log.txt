@@ -4,3 +4,12 @@
 2025-05-01 15:18:10.114656 - ETL process started.
 2025-05-01 15:18:10.668639 - Attempting to connect to the PostgreSQL database.
 2025-05-01 15:18:16.243768 - Connected to the 'health_data' database.
+2025-05-01 15:24:03.037269 - ETL process started.
+2025-05-01 15:24:04.989383 - Attempting to connect to the PostgreSQL database.
+2025-05-01 15:24:11.70358 - Connected to the 'health_data' database.
+2025-05-01 15:25:52.643759 - ETL process started.
+2025-05-01 15:25:57.603785 - Database 'health_data' already exists.
+2025-05-01 15:26:22.957724 - Final record count in 'datim_data': 387000
+2025-05-01 15:26:34.876526 - Exported full dataset to: Data/processed_files/extracted_data_fy24q4_2025-05-01.xlsx
+2025-05-01 15:26:34.937314 - Database connection closed.
+2025-05-01 15:26:34.967506 - ETL process completed.
