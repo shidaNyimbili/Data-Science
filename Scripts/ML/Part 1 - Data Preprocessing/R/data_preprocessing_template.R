@@ -4,10 +4,15 @@
 
 dataset = read.csv('Data.csv')
 
-view(dataset)
+glimpse(dataset)
 
-data1 <- read.csv
+str(dataset)
 
+colSums(is.na(dataset))   # Check total missing values per column
+
+
+
+colSums(is.na(dataset))
 # Splitting the dataset into the Training set and Test set
 # install.packages('caTools')
 library(caTools)

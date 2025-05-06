@@ -82,6 +82,8 @@ ggplot() +
 
 # Visualising the Test set results
 
+devtools::install_github("tylermorganwall/rayshader")
+
 ggplot() +
   geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),
              colour = 'red') +

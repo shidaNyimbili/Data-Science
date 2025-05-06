@@ -1,5 +1,8 @@
 # Data Preprocessing
 
+#Load packages
+source("Scripts/Data Science/r prep2.r")
+
 # Importing the dataset
 dataset <- read.csv('Data.csv')
 
