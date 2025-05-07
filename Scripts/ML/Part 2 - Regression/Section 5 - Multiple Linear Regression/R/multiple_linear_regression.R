@@ -95,21 +95,26 @@ library(Metrics)
 # install.packages("Metrics", type = "source")
 
 # Calculate Accuracy Metrics
-mae_value = mae(test_set$Profit, y_pred)
-mse_value = mse(test_set$Profit, y_pred)
-rmse_value = rmse(test_set$Profit, y_pred)
-r2_value = 1 - sum((test_set$Profit - y_pred)^2) / sum((test_set$Profit - mean(test_set$Profit))^2)
+MAE = mae(test_set$Profit, y_pred)
+MSE = mse(test_set$Profit, y_pred)
+RMSE = rmse(test_set$Profit, y_pred)
+Rsquared = 1 - sum((test_set$Profit - y_pred)^2) / sum((test_set$Profit - mean(test_set$Profit))^2)
 
 # Print the results
-cat("Mean Absolute Error (MAE):", round(mae_value, 2), "\n")
-cat("Mean Squared Error (MSE):", round(mse_value, 2), "\n")
-cat("Root Mean Squared Error (RMSE):", round(rmse_value, 2), "\n")
-cat("R-squared on Test Set:", round(r2_value, 4), "\n")
+cat("Mean Absolute Error (MAE):", round(MAE, 2), "\n")
+cat("Mean Squared Error (MSE):", round(MSE, 2), "\n")
+cat("Root Mean Squared Error (RMSE):", round(RMSE, 2), "\n")
+cat("R-squared on Test Set:", round(Rsquared, 4), "\n")
 
-
-# Plot Actual vs Predicted
-library(ggplot2)
-
-# Reshape data to long format
-
-
+# The Mean Absolute Error (MAE) indicates the average absolute difference between the predicted and actual values.
+# The R-squared value indicates how well the model explains the variability of the response data around its mean.
+# The closer the R-squared value is to 1, the better the model fits the data.
+# The RMSE value indicates the average distance between the predicted and actual values.
+# A lower RMSE value indicates a better fit.
+# The MAE value indicates the average absolute difference between the predicted and actual values.
+# A lower MAE value indicates a better fit.
+# The MSE value indicates the average squared difference between the predicted and actual values.
+# A lower MSE value indicates a better fit.
+# The Rsquared value indicates how well the model explains the variability of the response data around its mean.
+# The closer the Rsquared value is to 1, the better the model fits the data.
+# The MAE, MSE, RMSE, and Rsquared values can be used to compare the performance of different models.
