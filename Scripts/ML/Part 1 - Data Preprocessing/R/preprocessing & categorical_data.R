@@ -1,10 +1,16 @@
 # Data Preprocessing
 
 #Load packages
-source("Scripts/Data Science/r prep2.r")
+source("Scripts/General/r prep2.r")
 
-# Importing the dataset
+#Importing the dataset
+
+library(tidyverse)
+
+
 dataset <- read.csv('Data.csv')
+
+data <- read.csv("Data Science/Scripts/ML/Part 1 - Data Preprocessing/R/")
 
 #review the data
 colSums(is.na(dataset))   # Check total missing values per column

@@ -57,17 +57,8 @@ summary(regressor)
 # Predicting the Test set results
 y_pred = predict(regressor, newdata = test_set)
 
+y_pred
 
-# Create a comparison df between real vs predicted values #Error Analysis #Model evaluation
-comparison_df <- data.frame(
-  YearsExperience = test_set$YearsExperience,
-  Actual_Salary = test_set$Salary,
-  Predicted_Salary = round(y_pred, 0),
-  Difference = round(y_pred - test_set$Salary, 0)  # Error = Predicted - Actual
-)
-
-# View the table
-print(comparison_df)
 
 # Visualising the Training set results
 
@@ -92,3 +83,68 @@ ggplot() +
   ggtitle('Salary vs Experience (Test set)') +
   xlab('Years of experience') +
   ylab('Salary')
+
+# Compare predicted values with actual values
+results = data.frame(Actual = test_set$Salary, Predicted = y_pred)
+
+results
+
+# Create a comparison df between real vs predicted values #Error Analysis #Model evaluation
+comparison_df <- data.frame(
+  YearsExperience = test_set$YearsExperience,
+  Actual_Salary = test_set$Salary,
+  Predicted_Salary = round(y_pred, 0),
+  Difference = round(y_pred - test_set$Salary, 0)  # Error = Predicted - Actual
+)
+
+# View the table
+print(comparison_df)
+
+# Reshape data to long format for ggplot
+library(tidyverse)
+library(ggplot2)
+
+results_long <- results %>%
+  mutate(Index = row_number()) %>%
+  pivot_longer(cols = c("Actual", "Predicted"),
+               names_to = "Type",
+               values_to = "Profit")
+
+results_long
+
+
+
+# Plot actual vs predicted with different colors
+ggplot(results_long, aes(x = Index, y = Profit, color = Type)) +
+  geom_point(size = 3) +
+  labs(title = "Actual vs Predicted Profits",
+       x = "Observation",
+       y = "Profit") +
+  theme_minimal() +
+  scale_color_manual(values = c("Actual" = "blue", "Predicted" = "orange"))
+#Evaluate the model performance 
+library(Metrics)
+# install.packages("Metrics")
+# install.packages("Metrics", type = "source")
+# Load Metrics library for R-squared
+library(Metrics)
+
+results_long2 <- data.frame(Actual = test_set$Salary, Predicted = y_pred)
+
+results_long2
+
+results_clean <- na.omit(results_long2)
+
+results_clean
+
+# Calculate Accuracy Metrics
+mae_value = mae(results_clean$Actual, y_pred)
+mse_value = mse(results_clean$Actual, Predicted)
+rmse_value = rmse(results_clean$Actual, Predicted)
+r2_value = 1 - sum((results_clean$Actual - Predicted)^2) / sum((results_clean$Actual - mean(results_clean$Actual))^2)
+# Print the results
+cat("Mean Absolute Error (MAE):", round(mae_value, 2), "\n")
+cat("Mean Squared Error (MSE):", round(mse_value, 2), "\n")
+cat("Root Mean Squared Error (RMSE):", round(rmse_value, 2), "\n")
+cat("R-squared on Test Set:", round(r2_value, 4), "\n")
+

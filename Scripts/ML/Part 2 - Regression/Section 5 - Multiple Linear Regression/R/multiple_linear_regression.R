@@ -55,5 +55,61 @@ regressor = lm(formula = Profit ~ .,
 
 summary(regressor)
 
+#From the summary results only one variable has stat significance & influences profits
+regressor2 = lm(formula = Profit ~ R.D.Spend,
+               data = training_set) #manually adding the only significant independent variable
+summary(regressor2)
+
 # Predicting the Test set results
 y_pred = predict(regressor, newdata = test_set)
+
+y_pred
+# Compare predicted values with actual values
+results = data.frame(Actual = test_set$Profit, Predicted = y_pred)
+
+results
+
+# Reshape data to long format for ggplot
+library(tidyverse)
+library(ggplot2)
+
+results_long <- results %>%
+  mutate(Index = row_number()) %>%
+  pivot_longer(cols = c("Actual", "Predicted"),
+               names_to = "Type",
+               values_to = "Profit")
+
+results_long
+
+# Plot actual vs predicted with different colors
+ggplot(results_long, aes(x = Index, y = Profit, color = Type)) +
+  geom_point(size = 3) +
+  labs(title = "Actual vs Predicted Profits",
+       x = "Observation",
+       y = "Profit") +
+  theme_minimal() +
+  scale_color_manual(values = c("Actual" = "blue", "Predicted" = "orange"))
+
+#Evaluate the model performance
+library(Metrics)
+# install.packages("Metrics", type = "source")
+
+# Calculate Accuracy Metrics
+mae_value = mae(test_set$Profit, y_pred)
+mse_value = mse(test_set$Profit, y_pred)
+rmse_value = rmse(test_set$Profit, y_pred)
+r2_value = 1 - sum((test_set$Profit - y_pred)^2) / sum((test_set$Profit - mean(test_set$Profit))^2)
+
+# Print the results
+cat("Mean Absolute Error (MAE):", round(mae_value, 2), "\n")
+cat("Mean Squared Error (MSE):", round(mse_value, 2), "\n")
+cat("Root Mean Squared Error (RMSE):", round(rmse_value, 2), "\n")
+cat("R-squared on Test Set:", round(r2_value, 4), "\n")
+
+
+# Plot Actual vs Predicted
+library(ggplot2)
+
+# Reshape data to long format
+
+
