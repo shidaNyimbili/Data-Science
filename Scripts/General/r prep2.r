@@ -37,7 +37,7 @@ zam_packages <- c("tidyverse", "here", "gifski", "gstat","gt","gtsummary","gghig
                   "rnaturalearth", "terra","likert","sendmailR","DBI","RPostgres","data.table","janitor","reticulate", "DT", "mice",
                   "FactoMineR", "osrm","spatialreg","rayshader", "shinydashboard", "plotly", "DT","RPostgreSQL"
                   ,"Metrics","RPostgres","devtools","terra","ragg","randomForest", "transformr", "tidygraph","tm","tibble"
-                  ,"quanteda.textplots","spData")
+                  ,"quanteda.textplots","lm.beta","spData")
 
 
 
