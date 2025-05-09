@@ -61,6 +61,8 @@ y_pred
 
 
 # Visualising the Training set results
+library(ggplot2)
+
 
 ggplot() +
   geom_point(aes(x = training_set$YearsExperience, y = training_set$Salary),
@@ -73,7 +75,7 @@ ggplot() +
 
 # Visualising the Test set results
 
-devtools::install_github("tylermorganwall/rayshader")
+# devtools::install_github("tylermorganwall/rayshader")
 
 ggplot() +
   geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),
