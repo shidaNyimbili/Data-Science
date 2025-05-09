@@ -10,7 +10,7 @@ str(dataset) #Check the structure of the dataset
 
 head(dataset) #Check the first few rows of the dataset
 
-view(dataset)
+# view(dataset)
 
 
 
@@ -90,6 +90,18 @@ ggplot(results_long, aes(x = Index, y = Profit, color = Type)) +
   theme_minimal() +
   scale_color_manual(values = c("Actual" = "blue", "Predicted" = "orange"))
 
+ggsave("actual_vs_predicted.png",dpi = 300, device = "png",width = 8, height = 6)
+
+
+ggsave
+
+ggsave("Viz/demo.png",
+       device="png",
+       type="cairo",
+       dpi = 300,
+       height = 6.5,
+       width = 15)
+
 #Evaluate the model performance
 library(Metrics)
 # install.packages("Metrics", type = "source")
@@ -101,6 +113,7 @@ RMSE = rmse(test_set$Profit, y_pred)
 Rsquared = 1 - sum((test_set$Profit - y_pred)^2) / sum((test_set$Profit - mean(test_set$Profit))^2)
 
 # Print the results
+
 cat("Mean Absolute Error (MAE):", round(MAE, 2), "\n")
 cat("Mean Squared Error (MSE):", round(MSE, 2), "\n")
 cat("Root Mean Squared Error (RMSE):", round(RMSE, 2), "\n")
@@ -118,3 +131,5 @@ cat("R-squared on Test Set:", round(Rsquared, 4), "\n")
 # The Rsquared value indicates how well the model explains the variability of the response data around its mean.
 # The closer the Rsquared value is to 1, the better the model fits the data.
 # The MAE, MSE, RMSE, and Rsquared values can be used to compare the performance of different models.
+
+
