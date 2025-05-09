@@ -67,3 +67,7 @@ remotes::install_github("Nowosad/spDataLarge")
 remotes::install_github("yutannihilation/ggsflabel")
 install.packages("fpp2")
 
+install.packages("sfdep")
+install.packages("sf")
+install.packages("googlesheets4")
+install.packages(c("shiny", "shinydashboard", "plotly", "DT"))
