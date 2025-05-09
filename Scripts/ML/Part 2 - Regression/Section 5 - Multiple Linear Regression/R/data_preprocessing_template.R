@@ -14,3 +14,6 @@ test_set = subset(dataset, split == FALSE)
 # Feature Scaling
 # training_set = scale(training_set)
 # test_set = scale(test_set)
+
+install.packages("bs4Dash")
+packageVersion("bs4Dash")
