@@ -79,6 +79,7 @@ results_long <- results %>%
                names_to = "Type",
                values_to = "Profit")
 
+
 results_long
 
 # Plot actual vs predicted with different colors
@@ -95,7 +96,7 @@ ggsave("actual_vs_predicted.png",dpi = 300, device = "png",width = 8, height = 6
 
 ggsave
 
-ggsave("Viz/demo.png",
+ggsave("demo.png",
        device="png",
        type="cairo",
        dpi = 300,
@@ -133,3 +134,50 @@ cat("R-squared on Test Set:", round(Rsquared, 4), "\n")
 # The MAE, MSE, RMSE, and Rsquared values can be used to compare the performance of different models.
 
 
+
+#Building the optimal model using Backward Elimination
+regressor = lm(formula = Profit ~ + R.D.Spend + Administration + Marketing.Spend + State,
+               data = dataset) #manually adding all the independent variables
+
+summary(regressor)
+
+#Remove variable state
+regressor = lm(formula = Profit ~ + R.D.Spend + Administration + Marketing.Spend,
+               data = dataset) #manually adding all the independent variables
+
+summary(regressor)
+
+#Remove variable Administration
+regressor = lm(formula = Profit ~ + R.D.Spend + Marketing.Spend,
+               data = dataset) #manually adding all the independent variables
+summary(regressor)
+#Remove variable Marketing.Spend
+regressor = lm(formula = Profit ~ + R.D.Spend,
+               data = dataset) #manually adding all the independent variables
+summary(regressor)
+
+##Automatic backward elimination
+
+backwardElimination <- function(x, sl) {
+  numVars = length(x)
+  for (i in c(1:numVars)){
+    regressor = lm(formula = Profit ~ ., data = x)
+    maxVar = max(coef(summary(regressor))[c(2:numVars), "Pr(>|t|)"])
+    if (maxVar > sl){
+      j = which(coef(summary(regressor))[c(2:numVars), "Pr(>|t|)"] == maxVar)
+      x = x[, -j]
+    }
+    numVars = numVars - 1
+  }
+  return(summary(regressor))
+}
+
+SL = 0.05
+dataset = dataset[, c(1,2,3,4,5)]
+backwardElimination(training_set, SL)
+
+# Final model
+# Profit ~ R.D.Spend
+# The final model after backward elimination is:
+# Profit ~ R.D.Spend
+# This means that only the R&D Spend variable is statistically significant in predicting Profit.
