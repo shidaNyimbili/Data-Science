@@ -92,9 +92,8 @@ results_long <- results %>%
 
 results_long
 
-write.csv(results_long, "results_long.csv", row.names = FALSE)
+#write.csv(results_long, "results_long.csv", row.names = FALSE)
 
-view(results_long)
 
 # Plot actual vs predicted with different colors polynomial regression
 ggplot(results_long, aes(x = Index, y = Salary, color = Type)) +
