@@ -4,12 +4,15 @@ install.packages("DALEX")
 install.packages("tidymodels")
 install.packages("ranger", type = "source")
 
-# Load required libraries
-library(tidymodels)
-library(ggplot2)
-library(DALEX)
-library(dplyr)
-library(ranger)
+# # Load required libraries
+# library(tidymodels)
+# library(ggplot2)
+# library(DALEX)
+# library(dplyr)
+# library(ranger)
+source("scripts/General/r prep2.r")
+
+
 set.seed(123)  # For reproducibility
 
 # Step 1: Create synthetic dataset
