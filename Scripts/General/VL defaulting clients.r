@@ -18,7 +18,7 @@ set.seed(123)  # For reproducibility
 # Step 1: Create synthetic dataset
 # Simulating data for 1000 patients with relevant features
 
-hiv_data <- read.xlsx("Data Science/Data/hiv_data.xlsx")
+hiv_data <- read.xlsx("Data/hiv_data.xlsx")
 
 # n <- 1000
 # hiv_data <- tibble(

@@ -1,0 +1,27 @@
+[2025-05-23 23:16:58] 🚀 ETL run started.
+[2025-05-23 23:17:06] 🚀 ETL run started.
+[2025-05-23 23:17:09] ℹ️ Database 'sifaz_dw' already exists.
+[2025-05-23 23:17:09] ℹ️ PostGIS already enabled.
+[2025-05-23 23:17:09] 🗂️ Table 'kobo_interventions' recreated.
+[2025-05-23 23:17:10] ✅ Data loaded successfully into 'kobo_interventions'.
+[2025-05-23 23:17:10] ✅ ETL process completed successfully.
+[2025-05-23 23:22:33] 🚀 ETL run started.
+[2025-05-23 23:22:34] ℹ️ Database 'sifaz_dw' already exists.
+[2025-05-23 23:22:34] ℹ️ PostGIS already enabled.
+[2025-05-23 23:22:34] 🗂️ Table 'kobo_interventions' recreated.
+[2025-05-23 23:22:35] ✅ Data loaded successfully into 'kobo_interventions'.
+[2025-05-23 23:22:35] ✅ ETL process completed successfully.
+[2025-05-23 23:22:38] 🚀 ETL run finished.
+[2025-05-23 23:26:57] 🚀 ETL run started.
+[2025-05-23 23:26:58] ℹ️ Database 'sifaz_dw' already exists.
+[2025-05-23 23:26:58] ℹ️ PostGIS already enabled.
+[2025-05-23 23:26:58] 🗂️ Table 'kobo_interventions' recreated.
+[2025-05-23 23:26:58] ✅ Data loaded successfully into 'kobo_interventions'.
+[2025-05-23 23:26:58] 🚀 ETL run finished.
+[2025-05-23 23:29:53] 🚀 ETL run started.
+[2025-05-23 23:29:54] ℹ️ Database 'sifaz_dw' already exists.
+[2025-05-23 23:29:54] ℹ️ PostGIS already enabled.
+[2025-05-23 23:29:54] 🗂️ Table 'kobo_interventions' recreated.
+[2025-05-23 23:29:54] ✅ Data loaded successfully into 'kobo_interventions'.
+[2025-05-23 23:29:54] ✅ ETL process completed successfully.
+[2025-05-23 23:30:10] 🏁 ETL run finished.
