@@ -2,7 +2,19 @@
 
 # Importing the dataset
 dataset = read.csv('Position_Salaries.csv')
+
+dataset
+
 dataset = dataset[2:3]
+
+#review the data
+colSums(is.na(dataset))   # Check total missing values per column
+
+str(dataset) #Check the structure of the dataset
+
+head(dataset) #Check the first few rows of the dataset
+
+setNames(seq_along(colnames(dataset)), colnames(dataset)) # View column names with their index positions
 
 # Splitting the dataset into the Training set and Test set
 # # install.packages('caTools')
@@ -19,13 +31,23 @@ dataset = dataset[2:3]
 # Fitting SVR to the dataset
 # install.packages('e1071')
 library(e1071)
-regressor = svm(formula = Salary ~ .,
+regressor <- svm(formula = Salary ~ .,
                 data = dataset,
                 type = 'eps-regression',
                 kernel = 'radial')
 
+svm
+
 # Predicting a new result
-y_pred = predict(regressor, data.frame(Level = 6.5))
+y_pred <- predict(regressor, data.frame(Level = 6.5))
+
+y_pred
+
+# Compare predicted values with actual values linear
+results <- data.frame(Actual = dataset$Salary, Predicted = y_pred)
+
+results
+
 
 # Visualising the SVR results
 # install.packages('ggplot2')
