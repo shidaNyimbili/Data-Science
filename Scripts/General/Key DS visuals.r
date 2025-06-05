@@ -12,7 +12,7 @@ library(mlbench)
 library(dplyr)
 library(ROCR)
 
-install.packages("factoextra")
+install.packages("iml")
 
 # Load the dataset
 dataset <- read.xlsx("Data/dummy_sales_data.xlsx")

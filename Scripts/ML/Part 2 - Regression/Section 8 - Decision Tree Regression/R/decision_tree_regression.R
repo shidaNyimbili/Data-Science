@@ -4,6 +4,8 @@
 dataset = read.csv('Position_Salaries.csv')
 dataset = dataset[2:3]
 
+dataset
+
 # Splitting the dataset into the Training set and Test set
 # # install.packages('caTools')
 # library(caTools)
@@ -25,6 +27,13 @@ regressor = rpart(formula = Salary ~ .,
 
 # Predicting a new result with Decision Tree Regression
 y_pred = predict(regressor, data.frame(Level = 6.5))
+
+y_pred
+
+# Compare predicted values with actual values linear
+results <- data.frame(Actual = dataset$Salary, Predicted = y_pred)
+
+results
 
 # Visualising the Decision Tree Regression results (higher resolution)
 # install.packages('ggplot2')
